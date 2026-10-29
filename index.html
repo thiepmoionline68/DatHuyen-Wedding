@@ -840,6 +840,72 @@
 
     <!-- LỜI CHÚC -->
     <!-- TIN NHẮN -->
+<section id="message" class="section-message uk-background-cover uk-section" style="background-image:url(images/gEgk3no8v24zDfag2snCsLfQ4USOK0flGUTFVCXf.jpg); display:block;margin-top:100px;">
+        <div class="uk-position-cover uk-overlay uk-overlay-primary" style="opacity:.5"> </div>
+        <div class="message-container container uk-position-relative uk-position-z-index">
+           
+            <div class="list_message">
+                <!-- <div class="message-item" data-aos="fade-up" data-aos-duration="2000">
+            <i class='bx bxs-quote-alt-left'></i>
+            <h3 class="user_message">Phương Nguyễn</h3>
+            <p class="message_body">Chúc bạn thân của tao lấy một chồng, đẻ hai con đủ nếp đủ tẻ, sống ở nhà ba tầng,
+              mua xe 4 bánh nhé. Phải thật hạnh phúc mày nhé! Hi hi.</p>
+          </div> -->
+            </div>
+
+            <div class="uk-padding-small uk-border-rounded blur-bg" style="border:1px solid white">
+
+                <h3 class="form-title" style="color:white">Gửi lời chúc</h3>
+                <form action="" id="customForm">
+                    <div class="input-group uk-margin-top" style="color:white">
+                        <label for="">
+                            Tên của bạn </label>
+                        <input style="border:1px solid white" id="ten" type="text" class="input blur-bg" value="" required="">
+                    </div>
+                    <div class="input-group uk-margin-top">
+                        <label for="" style="color:white">
+                            Lời chúc </label>
+                            <input style="border:1px solid white" type="text" id="messages" class="input blur-bg" required="">
+                            <label for="" style="color:white">
+                                Xác nhận tham dự </label>
+                                <input style="border:1px solid white" type="text" id="accept" class="input blur-bg" required="">
+                    </div>
+                    <button type="submit" class="btn btn-primary send_message uk-margin-top" style="color:white">Gửi
+                        lời chúc</button>
+                </form>
+                <p style="margin-top:10px;" id="status"></p>
+                <a href="https://docs.google.com/spreadsheets/d/1V_Np1I8Rpdj_md0p7I5McvUBf1B7LQ0_JVv6qNm2rX4/edit?usp=sharing" style="color:white">Xem lời chúc</a>
+            </div>
+
+            <script>
+                document.getElementById("customForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    let name = document.getElementById("ten").value;
+                    let message = document.getElementById("messages").value;
+                    let accept = document.getElementById("accept").value;         
+                    // Thay thế bằng URL Google Form của bạn
+                    let googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc9hfKczkKYH8ymhoso9Q2TIdYbnKsn0lxGAPpHqp-F42gm-g/formResponse";
+                    // Các entry ID (tìm trong Google Form)
+                    let formData = new FormData();
+                    formData.append("entry.443369139", name); 
+                    formData.append("entry.318471349", message); 
+                    formData.append("entry.1476697686", accept);
+        
+                    fetch(googleFormURL, {
+                        method: "POST",
+                        body: formData,
+                        mode: "no-cors"
+                    }).then(() => {
+                        document.getElementById("status").innerText = "Gửi thành công!";
+                        document.getElementById("customForm").reset();
+                    }).catch(error => {
+                        document.getElementById("status").innerText = "Có lỗi xảy ra!";
+                    });
+                });
+            </script>
+        </div>
+    </section>
+    
     <!-- <section id="message" class="section-message uk-background-cover uk-section" style="background-image:url(images/gEgk3no8v24zDfag2snCsLfQ4USOK0flGUTFVCXf.jpg); display:block">
         <div class="uk-position-cover uk-overlay uk-overlay-primary" style="opacity:.5"> </div>
         <div class="message-container container uk-position-relative uk-position-z-index">
